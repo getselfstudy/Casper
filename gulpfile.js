@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var path = require('path');
 
 // gulp plugins and utils
 var gutil = require('gulp-util');
@@ -6,6 +7,9 @@ var livereload = require('gulp-livereload');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
 var zip = require('gulp-zip');
+var vulcanize = require('gulp-vulcanize');
+var debug = require('gulp-debug');
+var copy = require('gulp-copy');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
@@ -24,9 +28,25 @@ var nodemonServerInit = function () {
     livereload.listen(1234);
 };
 
-gulp.task('build', ['css'], function (/* cb */) {
+gulp.task('build', ['css', 'vulcanize', 'webcomponentsjs'], function (/* cb */) {
     return nodemonServerInit();
 });
+
+gulp.task('vulcanize', function () {
+    return gulp.src('./imports.html')
+        .pipe(debug({title: 'unicorn:'}))
+        .pipe(vulcanize({
+            sourcemaps: true,
+            abspath: __dirname,
+            inputUrl: '/imports.html'
+        }))
+        .pipe(gulp.dest('assets/components'));
+});
+
+gulp.task('webcomponentsjs', function () {
+    return gulp.src(['./node_modules/@webcomponents/**'])
+        .pipe(copy('assets/built', { prefix: 2 }));
+})
 
 gulp.task('css', function () {
     var processors = [
@@ -57,6 +77,7 @@ gulp.task('zip', ['css'], function () {
 
     return gulp.src([
         '**',
+        'node_modules/@webcomponents/webcomponentsjs',
         '!node_modules', '!node_modules/**',
         '!dist', '!dist/**'
     ])

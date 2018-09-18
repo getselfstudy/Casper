@@ -14,6 +14,9 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
+    <script src="/assets/webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="/assets/components/imports.html">
+
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
@@ -21,7 +24,6 @@
 <body class="{{body_class}}">
 
     <div class="site-wrapper">
-
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
 
@@ -65,7 +67,6 @@
             container.style.flex = ratio + ' 1 0%';
         })
     </script>
-
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
     <script

@@ -14,6 +14,9 @@ into the {body} of the default.hbs template --}}
                 {{/if}}
             </h1>
             <h2 class="site-description">{{@blog.description}}</h2>
+            <polymer-element prop1="this is a web component">
+                This is some content
+            </polymer-element>
         </div>
         {{> "site-nav"}}
     </div>
@@ -22,7 +25,6 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
     <div class="inner">
-
         <div class="post-feed">
             {{#foreach posts}}
 
