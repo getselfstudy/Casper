@@ -1,0 +1,1 @@
+import './polymer-element.js';

@@ -1,0 +1,1 @@
+define(["./polymer-element.js"],function(){"use strict"});

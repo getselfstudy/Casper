@@ -1,0 +1,40 @@
+{
+  "npm": true,
+  "lint": {
+    "rules": [
+      "polymer-3"
+    ]
+  },
+  "extraDependencies": [
+    "@webcomponents/webcomponentsjs/*.js"
+  ],
+  "entrypoint": "./index.html",
+  "sources": [
+  	"./tags/**/*.js",
+    "./index.html"
+  ],
+  "autoBasePath": true,
+	"builds": [
+    {
+      "name": "es5",
+      "preset": "es5-bundled",
+      "sourceMaps": true
+    },
+    {
+      "name": "es6",
+      "preset": "es6-unbundled",
+      "sourceMaps": true
+    },
+    {
+      "name": "dev",
+      "addServiceWorker": false,
+      "js": {"minify": false, "compile": false},
+      "css": {"minify": false},
+      "html": {"minify": false},
+      "bundle": false,
+      "addServiceWorker": false,
+      "addPushManifest": false,
+      "sourceMaps": true
+    }
+  ]
+}
