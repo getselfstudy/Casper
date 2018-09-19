@@ -67,16 +67,17 @@ gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['css']);
 });
 
-gulp.task('zip', ['css', 'polymerBuild', 'genDefault'], function () {
+gulp.task('zip', ['css', 'polymerBuild'], function () {
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
 
     return gulp.src([
         '**',
-        '!node_modules', '!node_modules/**',
-        '!dist', '!dist/**'
+        '!./node_modules', '!./node_modules/**',
+        '!./dist', '!./dist/**'
     ])
+        .pipe(debug())
         .pipe(zip(filename))
         .pipe(gulp.dest(targetDir));
 });
