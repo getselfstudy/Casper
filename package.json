@@ -16,7 +16,7 @@
         "build": "npm run postinstall; gulp prod",
         "zip": "gulp prod && gulp zip",
         "test": "gscan .",
-        "postinstall": "cd components; yarn install"
+        "postinstall": "cd components && yarn install && gulp prod && rm -rf node_modules ../node_modules"
     },
     "author": {
         "name": "Ghost Foundation",
