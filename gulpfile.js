@@ -52,7 +52,6 @@ var poly = (doMinify) => {
         const sourcesHtmlSplitter = new HtmlSplitter();
 
         var outStream = mergeStream(polymerProject.sources(), polymerProject.dependencies())
-            .pipe(sourcemaps.init())
             .pipe(debug())
             .pipe(polymerProject.bundler({
                 excludes: [ '@webcompontns/webcomponentsjs'],
@@ -64,13 +63,14 @@ var poly = (doMinify) => {
 
         if (doMinify) {
             outStream = outStream
+                .pipe(sourcemaps.init({ loadMaps: true }))
                 .pipe(gulpif(/\.js$/, uglify({ compress: true })))
                 .pipe(gulpif(/\.css$/, cssSlam()))
-                .pipe(gulpif(/\.html$/, htmlMinifier()));
+                .pipe(gulpif(/\.html$/, htmlMinifier()))
+                .pipe(sourcemaps.write('.'));
         }
 
         return outStream
-            .pipe(sourcemaps.write())
             .pipe(gulp.dest('build/'));
     };
 }
