@@ -211,11 +211,6 @@ window.JSCompiler_renameProperty=function(e){return e};let workingURL,resolveDoc
                     padding-top: 10px;
                     padding-bottom: 5px;
                 }
-                .question-wrapper {
-                    width: 100%;
-                    padding-top: 10px;
-                    padding-bottom: 5px;
-                }
                 .question-para {
                     position: relative;
                     width: 100%;
@@ -242,7 +237,6 @@ window.JSCompiler_renameProperty=function(e){return e};let workingURL,resolveDoc
                     color: white;
                     font-weight: 600;
                     text-align: center;
-                    font-size: 18px;
                     display: inline-block;
                 }
                 .question-question {
@@ -250,7 +244,6 @@ window.JSCompiler_renameProperty=function(e){return e};let workingURL,resolveDoc
                     display: inline-block;
                     margin-bottom: 10px;
                     font-weight: normal;
-                    font-size: 1.2rem;
                     min-height: 42px;
                 }
                 .test-btn-wrap {
@@ -288,7 +281,9 @@ window.JSCompiler_renameProperty=function(e){return e};let workingURL,resolveDoc
                         <slot name="stem"></slot>
                     </div>
                 </div>
-                <slot name="answers"></slot>
+                <div>
+                    <slot name="answers"></slot>
+                </div>
                 <div hidden$="{{!showConfidence}}">
                     <div class="test-btn-wrap">
                         <div class="test-btn">

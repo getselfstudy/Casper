@@ -36,11 +36,6 @@ class Question extends PolymerElement {
                     padding-top: 10px;
                     padding-bottom: 5px;
                 }
-                .question-wrapper {
-                    width: 100%;
-                    padding-top: 10px;
-                    padding-bottom: 5px;
-                }
                 .question-para {
                     position: relative;
                     width: 100%;
@@ -67,7 +62,6 @@ class Question extends PolymerElement {
                     color: white;
                     font-weight: 600;
                     text-align: center;
-                    font-size: 18px;
                     display: inline-block;
                 }
                 .question-question {
@@ -75,7 +69,6 @@ class Question extends PolymerElement {
                     display: inline-block;
                     margin-bottom: 10px;
                     font-weight: normal;
-                    font-size: 1.2rem;
                     min-height: 42px;
                 }
                 .test-btn-wrap {
@@ -113,7 +106,9 @@ class Question extends PolymerElement {
                         <slot name="stem"></slot>
                     </div>
                 </div>
-                <slot name="answers"></slot>
+                <div>
+                    <slot name="answers"></slot>
+                </div>
                 <div hidden$="{{!showConfidence}}">
                     <div class="test-btn-wrap">
                         <div class="test-btn">
