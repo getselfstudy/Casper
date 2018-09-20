@@ -18,12 +18,13 @@
     {
       "name": "es5",
       "preset": "es5-bundled",
-      "sourceMaps": true
+      "bundle": {
+        "sourceMaps": true
+      }
     },
     {
       "name": "es6",
-      "preset": "es6-unbundled",
-      "sourceMaps": true
+      "preset": "es6-unbundled"
     },
     {
       "name": "dev",
@@ -32,9 +33,7 @@
       "css": {"minify": false},
       "html": {"minify": false},
       "bundle": false,
-      "addServiceWorker": false,
-      "addPushManifest": false,
-      "sourceMaps": true
+      "addPushManifest": false
     }
   ]
 }
