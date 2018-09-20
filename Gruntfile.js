@@ -3,7 +3,11 @@
 'use strict';
 
 module.exports = function (grunt) {
-    require('matchdep').filterDev(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
+    console.log("Init");
+    require('matchdep').filterDev(['grunt-*', '!grunt-cli']).forEach(prod => {
+        console.log(prod);
+        grunt.loadNpmTasks(prod);
+    });
 
     grunt.initConfig({
         clean: {
@@ -21,7 +25,7 @@ module.exports = function (grunt) {
 
         shell: {
             'npm-install': {
-                command: 'yarn install && cd components && yarn install'
+                command: 'cd components && yarn install'
             },
 
             'npm-prod': {
