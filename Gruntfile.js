@@ -36,7 +36,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('npm-prod', 'Install the client dependencies',
-        ['shell:npm-install', 'shell:npm-prod', 'shell:npm-clean']
+        ['shell:npm-install', 'shell:npm-prod']
     );
 
     grunt.registerTask('init', 'Install the client dependencies',
