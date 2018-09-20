@@ -8,22 +8,23 @@
   "extraDependencies": [
     "@webcomponents/webcomponentsjs/*.js"
   ],
-  "entrypoint": "./index.html",
+  "entrypoint": "./components/index.js",
   "sources": [
-  	"./tags/**/*.js",
-    "./index.html"
+  	"./components/**/*.js"
   ],
   "autoBasePath": true,
 	"builds": [
     {
       "name": "es5",
       "preset": "es5-bundled",
+      "js": {"compile": true},
       "bundle": {
         "sourceMaps": true
       }
     },
     {
       "name": "es6",
+      "js": {"compile": true},
       "preset": "es6-unbundled"
     },
     {

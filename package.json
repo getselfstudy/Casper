@@ -16,8 +16,7 @@
         "build": "(cd components && yarn install) && gulp prod",
         "zip": "yarn run build && gulp zip",
         "test": "gscan .",
-        "clean": "rm -rf components/node_modules node_modules",
-        "postinstall": "yarn run build"
+        "clean": "rm -rf components/node_modules node_modules"
     },
     "author": {
         "name": "Ghost Foundation",
@@ -43,7 +42,7 @@
     "bugs": "https://github.com/TryGhost/Casper/issues",
     "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
     "dependencies": {
-        "@polymer/polymer": "^3.0.0",
+        "@polymer/polymer": "^3.0.5",
         "@webcomponents/webcomponentsjs": "^2.1.3",
         "autoprefixer": "6.3.6",
         "cssnano": "3.7.1",
@@ -54,9 +53,7 @@
         "gulp-if": "^2.0.2",
         "gulp-livereload": "3.8.1",
         "gulp-postcss": "6.1.1",
-        "gulp-rename": "^1.4.0",
-        "gulp-run": "^1.7.1",
-        "gulp-sourcemaps": "1.6.0",
+        "gulp-sourcemaps": "^2.6.4",
         "gulp-util": "3.0.7",
         "gulp-watch": "4.3.8",
         "gulp-zip": "4.0.0",
@@ -72,10 +69,20 @@
         "posts_per_page": 25
     },
     "devDependencies": {
+        "@babel/preset-env": "^7.1.0",
+        "css-slam": "^2.1.2",
         "grunt": "^1.0.3",
         "grunt-cli": "^1.3.1",
         "grunt-contrib-clean": "^2.0.0",
         "grunt-shell": "^2.1.0",
-        "matchdep": "^2.0.0"
+        "gulp-babel": "^8.0.0",
+        "gulp-copy": "^1.1.0",
+        "gulp-debug-streams": "^3.0.0",
+        "gulp-html-minifier": "^0.1.8",
+        "gulp-polymer-build": "^1.1.1",
+        "gulp-uglify-es": "^1.0.4",
+        "matchdep": "^2.0.0",
+        "polymer-build": "^3.0.4",
+        "polymer-bundler": "^4.0.2"
     }
 }
