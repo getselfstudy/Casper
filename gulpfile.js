@@ -35,7 +35,6 @@ function swallowError(error) {
     this.emit('end');
 };
 
-var polymerProject = new polymerBuild.PolymerProject(require('./polymer.json'));
 var buildDirectory = 'built';
 
 // promise that waits for stream to end
@@ -48,21 +47,21 @@ function waitFor(stream) {
 
 var poly = (doMinify) => {
     return () => {
-        del.sync([buildDirectory]);
+        var polymerProject = new polymerBuild.PolymerProject(require('./polymer.json'));
         const sourcesHtmlSplitter = new HtmlSplitter();
 
-        var outStream = mergeStream(polymerProject.sources(), polymerProject.dependencies())
-            .pipe(debug())
-            .pipe(polymerProject.bundler({
-                excludes: [ '@webcompontns/webcomponentsjs'],
-                sourcemaps: true,
-                stripComments: true,
-                strategy: generateSharedDepsMergeStrategy(3),
-                urlMapper: generateCountingSharedBundleUrlMapper('shared/bundle_')
-            }));
-
+        var outStream = mergeStream(polymerProject.sources(), polymerProject.dependencies());
         if (doMinify) {
+            del.sync(buildDirectory);
             outStream = outStream
+                .pipe(debug())
+                .pipe(polymerProject.bundler({
+                    excludes: [ '@webcompontns/webcomponentsjs'],
+                    sourcemaps: true,
+                    stripComments: true,
+                    strategy: generateSharedDepsMergeStrategy(3),
+                    urlMapper: generateCountingSharedBundleUrlMapper('shared/bundle_')
+                }))
                 .pipe(sourcemaps.init({ loadMaps: true }))
                 .pipe(gulpif(/\.js$/, uglify({ compress: true })))
                 .pipe(gulpif(/\.css$/, cssSlam()))
@@ -71,7 +70,9 @@ var poly = (doMinify) => {
         }
 
         return outStream
-            .pipe(gulp.dest(buildDirectory));
+            .pipe(debug())
+            .pipe(gulp.dest(buildDirectory))
+            .pipe(livereload())
     };
 }
 
@@ -117,9 +118,10 @@ gulp.task('css', function () {
 
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['css']);
+    gulp.watch('components/**', ['polymer']);
 });
 
-gulp.task('zip', ['css', 'polymerBuild'], function () {
+gulp.task('zip', ['css', 'polymer-prod', 'webcomponents'], function () {
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
@@ -136,4 +138,8 @@ gulp.task('zip', ['css', 'polymerBuild'], function () {
 
 gulp.task('default', ['build'], function () {
     gulp.start('watch');
+});
+
+gulp.task('clean', function () {
+    return del.sync([buildDirectory]);
 });

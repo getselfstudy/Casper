@@ -6,7 +6,8 @@
     ]
   },
   "extraDependencies": [
-    "@webcomponents/webcomponentsjs/*.js"
+    "@webcomponents/webcomponentsjs/*.js",
+    "@polymer/polymer/*.js"
   ],
   "entrypoint": "./components/index.js",
   "sources": [

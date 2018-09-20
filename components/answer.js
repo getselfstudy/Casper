@@ -1,4 +1,4 @@
-import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import {html, PolymerElement} from '../node_modules/@polymer/polymer/polymer-element.js';
 
 /**
  * `polymer-element`
@@ -13,15 +13,174 @@ class Answer extends PolymerElement {
         return html`
             <style>
                 :host {
-                    display: block;
+                    display: inline-block;
                 }
                 .answer-caption {
                     display: inline-block;
                     vertical-align: middle;
                 }
+                @media (min-width: 600px) {
+                    :host {
+                        width: 49%;
+                    }
+                    .answer-wrapper {
+                        display: block;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    .question-preview .answer-wrapper,
+                    .q-footer {
+                        padding: 0 3rem;
+                    }
+                    .test-btn-wrap .answer-wrapper {
+                        padding: 0;
+                    }
+                    .answer-wrapper .question-answer {
+                        display: block;
+                        width: 100%;
+                        min-height: 1px;
+                        align-items: center;
+                        position: relative;
+                    }
+                }
+                @media (max-width: 575.98px) {
+                    :host {
+                        width: 100%;
+                    }
+                    .answer-wrapper .question-answer {
+                        width: 100%;
+                    }
+                    .question-preview {
+                        margin-top: 0;
+                    }
+                    .question-preview .question-question p {
+                        line-height: 1.2;
+                    }
+                    .test-btn-wrap {
+                        width: 100%;
+                        margin-left: 0;
+                    }
+                    .test-btn button {
+                        width: 80%;
+                        margin: 10px 10%;
+                    }
+                    .question-preview {
+                        padding: 1rem 1rem;
+                        border-radius: 0;
+                        border-left: none;
+                        border-right: none;
+                    }
+                    .text-answer input {
+                        width: 100%;
+                        margin-left: 0;
+                    }
+                }
+                .answer-wrapper {
+                    justify-content: space-between;
+                }
+                .answer-wrapper .question-answer {
+                    display: block;
+                    align-items: center;
+                    position: relative;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    border-radius: 0.25rem;
+                    background-color: white;
+                    padding: 0 5px;
+                    margin-bottom: 5px;
+                }
+                .question-answer:focus,
+                .question-answer:hover {
+                    outline: none;
+                    border-radius: 4px;
+                    border: 1px solid #cce4e2;
+                }
+                .question-answer:before {
+                    content: "";
+                    display: block;
+                    opacity: 0;
+                    position: absolute;
+                    transition-duration: 0.15s;
+                    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    background: #20a499;
+                    border-radius: 4px;
+                    transform: scale(0);
+                    transition-property: transform, opacity;
+                }
+                .question-answer:hover:before,
+                .question-answer:focus:before {
+                    transform: scale(1);
+                    opacity: 0.12;
+                }
+                .question-wrapper {
+                    width: 100%;
+                    padding-top: 10px;
+                    padding-bottom: 5px;
+                }
+                .correct-ans {
+                    color: green;
+                    text-align: center;
+                    margin-top: 25px;
+                }
+                .wrong-ans {
+                    color: red;
+                    text-align: center;
+                    margin-top: 25px;
+                }
+                .question-answer input[type="radio"],
+                .question-answer input[type="checkbox"] {
+                    margin: 20px 10px;
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .question-answer input[type="radio"],
+                .question-answer input[type="checkbox"] {
+                    background: #f3f3f3;
+                    width: 30px;
+                    height: 30px;
+                    border: 2px solid #366fb5;
+                    transition: all 0.3s linear;
+                    cursor: pointer;
+                    -webkit-appearance: none;
+                    appearance: none;
+                }
+                .question-answer input[type="radio"] {
+                    border-radius: 50%;
+                }
+                .question-answer input[type="checkbox"] {
+                    border-radius: 2px;
+                }
+                .question-answer input[type="radio"]:checked,
+                .question-answer input[type="checkbox"]:checked {
+                    background-color: #366fb5;
+                }
+                .question-answer input[type="radio"]:focus,
+                .question-answer input[type="checkbox"]:focus {
+                    outline: 0 none;
+                    box-shadow: none;
+                }
+                .question-para {
+                    position: relative;
+                    width: 100%;
+                    min-height: 42px;
+                }
+                .question-para {
+                    padding-top: 7px;
+                }
+                .question-para i,
+                .question-para b,
+                .question-para em,
+                .question-para sup,
+                .question-para sub {
+                    display: inline;
+                }
             </style>
             <div class="answer-wrapper">
-                <div>Answer [[id]]</div>
                 <label
                     for="[[id]]"
                     tabIndex="-1"
@@ -38,7 +197,9 @@ class Answer extends PolymerElement {
                             on-change="handleChange"
                         />
                         <div class="answer-caption">
-                            <slot></slot>
+                            <div class="question-para">
+                                <slot></slot>
+                            </div>
                         </div>
                     </div>
                 </label>
