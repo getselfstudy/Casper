@@ -1,5 +1,15 @@
 import {html, PolymerElement} from '../node_modules/@polymer/polymer/polymer-element.js';
 
+function truthy(val) {
+    if (/^\s*(true|1|on|yes|y)\s*$/i.test(val)) {
+        return true;
+    }
+    if (/^\s*(false|0|off|no|n)\s*$/i.test(val)) {
+        return false;
+    }
+    return null;
+}
+
 /**
  * `polymer-element`
  * Sample element
@@ -9,21 +19,6 @@ import {html, PolymerElement} from '../node_modules/@polymer/polymer/polymer-ele
  * @demo demo/index.html
  */
 class Question extends PolymerElement {
-    constructor() {
-        super();
-        this._listener = this._selfstudyAnswer.bind(this);
-    }
-
-    connectedCallback() {
-        super.connectedCallback();
-        window.addEventListener('selfstudyanswer', this._listener);
-    }
-
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        window.removeEventListener('selfstudyanswer', this._listener);
-    }
-
     static get template() {
         return html`
             <style>
@@ -98,16 +93,23 @@ class Question extends PolymerElement {
                     padding-top: 10px;
                     padding-bottom: 10px;
                 }
+                .answer-list {
+                    display: flex;
+                    width: 100%;
+                    flex-direction: row;
+                    flex-flow: wrap;
+                }
             </style>
             <div class="main-question" hidden$="{{!show}}">
+                <div>Answers [[answered]]</div>
                 <div class="question-wrapper">
                     <div hidden$="{{!index}}" class="question-number">[[index]]</div>
                     <div class="question-question question-para">
                         <slot name="stem"></slot>
                     </div>
                 </div>
-                <div>
-                    <slot name="answers"></slot>
+                <div class="answer-list">
+                    <slot id="answers-slot" name="answers"></slot>
                 </div>
                 <div hidden$="{{!showConfidence}}">
                     <div class="test-btn-wrap">
@@ -168,6 +170,11 @@ class Question extends PolymerElement {
                 readOnly: false,
                 value: () => ({})
             },
+            preserve: {
+                type: Boolean,
+                notify: true,
+                readOnly: false
+            },
             showConfidence: {
                 type: Boolean,
                 value: false,
@@ -182,6 +189,11 @@ class Question extends PolymerElement {
                 type: Boolean,
                 value: true,
                 nofify: true
+            },
+            correct: {
+                type: Boolean,
+                value: false,
+                notify: true
             }
         };
     }
@@ -190,6 +202,63 @@ class Question extends PolymerElement {
         return [
             '_checkConfidence(confidence, answer)'
         ];
+    }
+
+    constructor() {
+        super();
+        this._listener = this._selfstudyAnswer.bind(this);
+
+        const answers = [].slice.call(this.querySelectorAll('div[slot="answers"] selfstudy-answer'));
+        const preserve = truthy(this.getAttribute('preserve'));
+        this.expected = (this.getAttribute('expect') || '1').split(',').reduce((expect, val) => {
+            const [index, order] = val.split(':');
+            if (order) {
+                expect[index] = Number(order);
+            } else {
+                expect[index] = true;
+            }
+            return expect;
+        }, {});
+        this.exclusive = {};
+        answers.forEach((item, index) => {
+            if (!item.getAttribute('id')) {
+                item.setAttribute('id', `${index + 1}`);
+            }
+            if (item.getAttribute('type') === 'radio') {
+                this.exclusive[item.getAttribute('id')] = item;
+            }
+            if (preserve) {
+                item.setAttribute('order', item.getAttribute('id'))
+            } else {
+                item.setAttribute('order', Math.random());
+            }
+            item.setAttribute('path', index + 1);
+        });
+
+        if (!preserve) {
+            answers.sort(function (a, b) {
+                return a.getAttribute('order') - b.getAttribute('order');
+            });
+
+            let previous = null;
+            for (let index in answers) {
+                const answer = answers[index];
+                if (previous) {
+                    answer.parentNode.insertBefore(previous, answer);
+                }
+                previous = answer;
+            }
+        }
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.addEventListener('selfstudyanswer', this._listener);
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.removeEventListener('selfstudyanswer', this._listener);
     }
 
     _checkConfidence(confidence, answer) {
@@ -205,6 +274,7 @@ class Question extends PolymerElement {
                 }
             } else {
                 this.set('hasConfidence', false);
+                this.set('showConfidence', false);
             }
         } else {
             if (Object.keys(answer.choice || {}).length > 0) {
@@ -227,14 +297,58 @@ class Question extends PolymerElement {
         e.stopPropagation();
         const answer = Object.assign(this.answer || {});
         delete answer.confidence;
-        const choice = Object.assign(answer.choice || {}, e.value);
-        Object.keys(choice).forEach(key => {
-            if (!choice[key]) {
-                delete choice[key];
+        const { id, value, path } = e.detail || {};
+        let choice = Object.assign(answer.choice || {});
+        if (typeof value === 'boolean') {
+            if (value) {
+                choice[id] = Object.keys(choice).length + 1;
+                if (this.exclusive[id]) {
+                    Object.keys(this.exclusive).forEach(key => {
+                        if (id !== key) {
+                            const item = this.exclusive[key];
+                            if (item.value) {
+                                delete choice[key];
+                                item.value = "false";
+                            }
+                        }
+                    })
+                }
+            } else if (choice[id]) {
+                delete choice[id];
             }
-        });
+            const temp = Object.keys(choice).map(key => {
+                return {
+                    key,
+                    value: choice[key]
+                }
+            });
+            temp.sort((a, b) => a.value - b.value);
+            choice = temp.reduce((choice, {key}, index) => {
+                choice[key] = index + 1;
+                return choice;
+            }, {});
+        }
         answer.choice = choice;
-        this.set('answered', Object.keys(choice).join(', '));
+        const all = Object.assign({}, this.expected, choice);
+        let correct = Object.keys(all).reduce((correct, key) => {
+            if (!correct) {
+                return correct;
+            }
+            const value = this.expected[key];
+            if (typeof value === 'boolean') {
+                if (!choice[key]) {
+                    return false;
+                }
+            } else {
+                if (value !== choice[key]) {
+                    return false;
+                }
+            }
+            return true;
+        }, true);
+
+        this.set('correct', correct);
+        this.set('answered', Object.keys(choice).map(key => `${key}:${choice[key]}`).join(', ') + (correct ? ' correct!' : ''));
         this.set('answer', answer);
         this._checkConfidence(this.confidence, this.answer);
     }

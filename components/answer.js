@@ -1,5 +1,15 @@
 import {html, PolymerElement} from '../node_modules/@polymer/polymer/polymer-element.js';
 
+function truthy(val) {
+    if (/^\s*(true|1|on|yes|y)\s*$/i.test(val)) {
+        return true;
+    }
+    if (/^\s*(false|0|off|no|n)\s*$/i.test(val)) {
+        return false;
+    }
+    return null;
+}
+
 /**
  * `polymer-element`
  * Sample element
@@ -13,16 +23,15 @@ class Answer extends PolymerElement {
         return html`
             <style>
                 :host {
-                    display: inline-block;
+                    display: flex;
+                    width: 29%;
+                    flex-basis: 300px;
                 }
                 .answer-caption {
                     display: inline-block;
                     vertical-align: middle;
                 }
                 @media (min-width: 600px) {
-                    :host {
-                        width: 49%;
-                    }
                     .answer-wrapper {
                         display: block;
                         flex-wrap: wrap;
@@ -45,9 +54,6 @@ class Answer extends PolymerElement {
                     }
                 }
                 @media (max-width: 575.98px) {
-                    :host {
-                        width: 100%;
-                    }
                     .answer-wrapper .question-answer {
                         width: 100%;
                     }
@@ -78,6 +84,7 @@ class Answer extends PolymerElement {
                 }
                 .answer-wrapper {
                     justify-content: space-between;
+                    width: 100%;
                 }
                 .answer-wrapper .question-answer {
                     display: block;
@@ -192,7 +199,7 @@ class Answer extends PolymerElement {
                             type="[[type]]"
                             name="[[id]]"
                             id="[[id]]"
-                            checked="{{config.checked}}"
+                            checked="{{checked}}"
                             value="[[config.value]]"
                             on-change="handleChange"
                         />
@@ -226,8 +233,8 @@ class Answer extends PolymerElement {
                 readOnly: false
             },
             value: {
-                type: Object,
-                value: () => ({}),
+                type: String,
+                value: "false",
                 notify: true,
                 readOnly: false
             },
@@ -254,29 +261,37 @@ class Answer extends PolymerElement {
                 value: false,
                 notify: true,
                 readOnly: false
+            },
+            order: {
+                type: Number,
+                value: () => this.id
             }
         };
     }
 
     handleChange(e) {
         e.stopPropagation();
-        const event = new CustomEvent('selfstudyanswer', {bubbles: true, composed: true});
-        const checked = e.target[this.config.property];
-        event.value = {
-            [this.id]: checked
-        };
+        const value = e.target[this.config.property];
+        this.set('value', value);
+        const event = new CustomEvent('selfstudyanswer', {
+            bubbles: true, composed: true,
+            detail: {
+                value,
+                path: this.config.path,
+                id: this.id
+            }
+        });
         this.dispatchEvent(event);
     }
 
     computeConfig(value, expect, showCorrect, review) {
-        value = value || {};
         const oldConfig = this.config || {};
         const config = Object.assign({}, oldConfig);
         switch (this.type) {
         case "text":
             config.className = "text-answer";
             config.path = "value";
-            config.value = value[this.id] || "";
+            config.value = value || "";
             config.property = "value";
             config.isCorrect = config.value === this.expect;
             break;
@@ -284,7 +299,7 @@ class Answer extends PolymerElement {
             config.value = this.id + 1;
             config.path = `${this.id + 1}`;
             config.className = "checkbox";
-            config.checked = value[this.id] || false;
+            config.checked = truthy(value);
             config.property = "checked";
             config.isCorrect = config.checked === (expect === "true");
             if (config.checked && !config.isCorrect) {
@@ -295,7 +310,7 @@ class Answer extends PolymerElement {
             config.value = this.id + 1;
             config.path = `${this.id + 1}`;
             config.className = "radio";
-            config.checked = value[this.id] || false;
+            config.checked = truthy(value);
             config.property = "checked";
             config.isCorrect = config.checked === (expect === "true");
             if (config.checked && !config.isCorrect) {
