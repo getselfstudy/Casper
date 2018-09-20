@@ -36,7 +36,7 @@ function swallowError(error) {
 };
 
 var polymerProject = new polymerBuild.PolymerProject(require('./polymer.json'));
-var buildDirectory = 'build';
+var buildDirectory = 'built';
 
 // promise that waits for stream to end
 function waitFor(stream) {
@@ -71,7 +71,7 @@ var poly = (doMinify) => {
         }
 
         return outStream
-            .pipe(gulp.dest('build/'));
+            .pipe(gulp.dest(buildDirectory));
     };
 }
 
@@ -82,7 +82,7 @@ gulp.task('webcomponents', function () {
     return gulp.src([
         './node_modules/@webcomponents/webcomponentsjs/**'
     ])
-        .pipe(copy('build/', { prefix: 2 }))
+        .pipe(copy(buildDirectory, { prefix: 2 }))
 });
 
 var nodemonServerInit = function () {
