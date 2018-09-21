@@ -149,6 +149,10 @@ class Question extends PolymerElement {
 
     static get properties() {
         return {
+            id: {
+                type: String,
+                value: "default"
+            },
             index: {
                 type: String,
                 value: ""
@@ -187,7 +191,7 @@ class Question extends PolymerElement {
             },
             show: {
                 type: Boolean,
-                value: true,
+                value: false,
                 nofify: true
             },
             correct: {
@@ -283,6 +287,16 @@ class Question extends PolymerElement {
                 this.set('hasConfidence', false);
             }
         }
+        if (this.get('hasConfidence')) {
+            const event = new CustomEvent('selfstudyquestionanswer', {
+                bubbles: true, composed: true,
+                detail: {
+                    value: answer,
+                    id: this.id
+                }
+            });
+            this.dispatchEvent(event);    
+        }
     }
 
     _handleConfidence(e) {
@@ -346,6 +360,7 @@ class Question extends PolymerElement {
             }
             return true;
         }, true);
+        answer.correct = correct;
 
         this.set('correct', correct);
         this.set('answered', Object.keys(choice).map(key => `${key}:${choice[key]}`).join(', ') + (correct ? ' correct!' : ''));

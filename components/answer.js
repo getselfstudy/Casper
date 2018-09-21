@@ -284,7 +284,7 @@ class Answer extends PolymerElement {
         this.dispatchEvent(event);
     }
 
-    computeConfig(value, expect, showCorrect, review) {
+    computeConfig(value, expect, showCorrect, review, hide) {
         const oldConfig = this.config || {};
         const config = Object.assign({}, oldConfig);
         switch (this.type) {
