@@ -199,7 +199,7 @@ class Answer extends PolymerElement {
                             type="[[type]]"
                             name="[[id]]"
                             id="[[id]]"
-                            checked="{{checked}}"
+                            checked="{{config.checked}}"
                             value="[[config.value]]"
                             on-change="handleChange"
                         />

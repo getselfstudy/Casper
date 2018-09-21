@@ -208,7 +208,7 @@ class Question extends PolymerElement {
         super();
         this._listener = this._selfstudyAnswer.bind(this);
 
-        const answers = [].slice.call(this.querySelectorAll('div[slot="answers"] selfstudy-answer'));
+        const answers = [].slice.call(this.querySelectorAll('selfstudy-answer'));
         const preserve = truthy(this.getAttribute('preserve'));
         this.expected = (this.getAttribute('expect') || '1').split(',').reduce((expect, val) => {
             const [index, order] = val.split(':');
@@ -306,7 +306,7 @@ class Question extends PolymerElement {
                     Object.keys(this.exclusive).forEach(key => {
                         if (id !== key) {
                             const item = this.exclusive[key];
-                            if (item.value) {
+                            if (truthy(item.value)) {
                                 delete choice[key];
                                 item.value = "false";
                             }
