@@ -1,0 +1,4 @@
+assets/components/**
+src/**
+webpack.config.js
+server.js

@@ -14,8 +14,18 @@
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
-    <script src="/built/webcomponentsjs/webcomponents-loader.js"></script>
-    <script type="module" src="/built/components/index.js"></script>
+    <script>if (!window.customElements) { document.write('<!--'); }</script>
+    <script src="/assets/built/vendor/custom-elements-es5-adapter.js"></script>
+    <!--! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('sw.js');
+        });
+      }
+    </script>
+    <script type="module" src="/assets/built/components/index.js"></script>
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -86,11 +96,17 @@
     <script src="{{asset "js/infinitescroll.js"}}"></script>
     {{/if}}
 
-    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there is
+        some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}
+
+    {{!-- Load the external helpers to run the code transpiled to ES5 --}}
+    <script src="/assets/built/vendor/babel-helpers.min.js"></script>
+    <script src="/assets/built/vendor/regenerator-runtime.min.js"></script>
+    {{!-- Load webcomponents-loader.js to check and load any polyfills your browser needs --}}
+    <script src="/assets/built/vendor/webcomponents-loader.js"></script>
 
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
-
 </body>
 </html>

@@ -1,0 +1,86 @@
+<!--
+@license
+Copyright (c) 2018 Vaadin Ltd.
+This program is available under Apache License Version 2.0, available at https://vaadin.com/license/
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>if (!window.customElements) { document.write('<!--'); }</script>
+    <script src="./vendor/custom-elements-es5-adapter.js"></script>
+    <!--! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+
+    <!-- <script>
+      // Load and register pre-caching Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('sw.js');
+        });
+      }
+    </script> -->
+  </head>
+  <body>
+    <div>
+        <h1>Something</h1>
+        <selfstudy-question-set>
+            <selfstudy-question id="1" index="1" confidence="true" preserve="false" expect="2:1,3:2">
+                <div slot="stem">This is a question stem. Select #2 and #3 in that order</div>
+                <selfstudy-answer slot="answers" type="checkbox" id="1">
+                    This is text 1
+                </selfstudy-answer>
+                <selfstudy-answer slot="answers" type="checkbox" id="2">
+                    This is text 2
+                </selfstudy-answer>
+                <selfstudy-answer slot="answers" type="checkbox" id="3">
+                    This is text 3
+                </selfstudy-answer>
+                <selfstudy-answer slot="answers" type="checkbox" id="4">
+                    This is text 4
+                </selfstudy-answer>
+                <div slot="explanation">This is an explanation</div>
+            </selfstudy-question>
+
+            <selfstudy-question id="2" index="2" confidence="true" preserve="false" expect="1">
+                <div slot="stem">This is a question stem. Select #1 </div>
+                <selfstudy-answer slot="answers" type="checkbox" id="1">
+                    This is text 1
+                </selfstudy-answer>
+                <selfstudy-answer slot="answers" type="checkbox" id="2">
+                    This is text 2
+                </selfstudy-answer>
+                <selfstudy-answer slot="answers" type="checkbox" id="3">
+                    This is text 3
+                </selfstudy-answer>
+                <selfstudy-answer slot="answers" type="checkbox" id="4">
+                    This is text 4
+                </selfstudy-answer>
+                <div slot="explanation">This is an explanation</div>
+            </selfstudy-question>
+
+            <selfstudy-question id="3" index="3" confidence="true" preserve="false" expect="2">
+                <div slot="stem">This is a question stem. Select #2 </div>
+                <selfstudy-answer slot="answers" type="radio" id="1">
+                    This is text 1
+                </selfstudy-answer>
+                <selfstudy-answer slot="answers" type="radio" id="2">
+                    This is text 2
+                </selfstudy-answer>
+                <selfstudy-answer slot="answers" type="checkbox" id="3">
+                    This is text 3
+                </selfstudy-answer>
+                <selfstudy-answer slot="answers" type="checkbox" id="4">
+                    This is text 4
+                </selfstudy-answer>
+                <div slot="explanation">This is an explanation</div>
+            </selfstudy-question>
+        </selfstudy-question-set>
+    </div>
+    
+    <!-- Load the external helpers to run the code transpiled to ES5 -->
+    <script src="./vendor/babel-helpers.min.js"></script>
+    <script src="./vendor/regenerator-runtime.min.js"></script>
+    <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+    <script src="./vendor/webcomponents-loader.js"></script>
+  </body>
+</html>
