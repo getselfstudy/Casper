@@ -1,39 +1,39 @@
 self.__precacheManifest = [
   {
-    "revision": "8391957aaff84ed2243736878b5b1108",
-    "url": "vendor/custom-elements-es5-adapter.js"
+    "revision": "d42dd0732b85d5efa9e1660a1747b05c",
+    "url": "vendor/webcomponents-loader.js"
   },
   {
-    "revision": "bde819883200b3983ec2",
+    "revision": "94cbaccacdd6514bebac",
     "url": "index.js"
-  },
-  {
-    "revision": "66ea1dd0a08b63e0ac25d28e724c6ade",
-    "url": "vendor/babel-helpers.min.js"
-  },
-  {
-    "revision": "2a4e4544e063858d45ff6def0564a7a2",
-    "url": "vendor/regenerator-runtime.min.js"
   },
   {
     "revision": "2ee8e9fa9b65e87b8a0432efa9ac64f2",
     "url": "manifest.json"
   },
   {
-    "revision": "d42dd0732b85d5efa9e1660a1747b05c",
-    "url": "vendor/webcomponents-loader.js"
+    "revision": "66ea1dd0a08b63e0ac25d28e724c6ade",
+    "url": "vendor/babel-helpers.min.js"
   },
   {
-    "revision": "bde819883200b3983ec2",
+    "revision": "8391957aaff84ed2243736878b5b1108",
+    "url": "vendor/custom-elements-es5-adapter.js"
+  },
+  {
+    "revision": "2a4e4544e063858d45ff6def0564a7a2",
+    "url": "vendor/regenerator-runtime.min.js"
+  },
+  {
+    "revision": "94cbaccacdd6514bebac",
     "url": "index.js.map"
-  },
-  {
-    "revision": "34b23afbd46762843d957caa7c179a7a",
-    "url": "vendor/bundles/webcomponents-ce.js.map"
   },
   {
     "revision": "0e7a6edc16d1135f68498f5d34f09ca1",
     "url": "vendor/webcomponents-bundle.js.map"
+  },
+  {
+    "revision": "34b23afbd46762843d957caa7c179a7a",
+    "url": "vendor/bundles/webcomponents-ce.js.map"
   },
   {
     "revision": "12a3be26a3d9cbfb6ed798b0c9f2bad8",
