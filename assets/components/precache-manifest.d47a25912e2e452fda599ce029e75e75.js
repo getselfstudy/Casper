@@ -1,27 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "d42dd0732b85d5efa9e1660a1747b05c",
-    "url": "vendor/webcomponents-loader.js"
+    "revision": "8391957aaff84ed2243736878b5b1108",
+    "url": "vendor/custom-elements-es5-adapter.js"
   },
   {
     "revision": "bde819883200b3983ec2",
     "url": "index.js"
   },
   {
-    "revision": "8391957aaff84ed2243736878b5b1108",
-    "url": "vendor/custom-elements-es5-adapter.js"
+    "revision": "66ea1dd0a08b63e0ac25d28e724c6ade",
+    "url": "vendor/babel-helpers.min.js"
+  },
+  {
+    "revision": "2a4e4544e063858d45ff6def0564a7a2",
+    "url": "vendor/regenerator-runtime.min.js"
   },
   {
     "revision": "2ee8e9fa9b65e87b8a0432efa9ac64f2",
     "url": "manifest.json"
   },
   {
-    "revision": "a69473468c597fb500ed15133176741f",
-    "url": "vendor/babel-helpers.min.js"
-  },
-  {
-    "revision": "3f1e9c1eb60b815b28513481127fc7fc",
-    "url": "vendor/regenerator-runtime.min.js"
+    "revision": "d42dd0732b85d5efa9e1660a1747b05c",
+    "url": "vendor/webcomponents-loader.js"
   },
   {
     "revision": "bde819883200b3983ec2",

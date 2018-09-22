@@ -443,117 +443,7 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
-"@polymer/app-layout@^3.0.0-pre.25":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/app-layout/-/app-layout-3.0.1.tgz#41266a4ae358a4f180b83d1d570a260a09570a33"
-  dependencies:
-    "@polymer/iron-flex-layout" "^3.0.0-pre.26"
-    "@polymer/iron-media-query" "^3.0.0-pre.26"
-    "@polymer/iron-resizable-behavior" "^3.0.0-pre.26"
-    "@polymer/iron-scroll-target-behavior" "^3.0.0-pre.26"
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-a11y-announcer@^3.0.0-pre.18":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-a11y-announcer/-/iron-a11y-announcer-3.0.1.tgz#62c68fda0964494fd790887a596bbda74bcbc13d"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-a11y-keys-behavior@^3.0.0-pre.18", "@polymer/iron-a11y-keys-behavior@^3.0.0-pre.26":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-a11y-keys-behavior/-/iron-a11y-keys-behavior-3.0.1.tgz#2868ea72912d2007ffab4734684a91f5aac49b84"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-ajax@^3.0.0-pre.25", "@polymer/iron-ajax@^3.0.0-pre.26":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-ajax/-/iron-ajax-3.0.1.tgz#831781be31ced011ac7243a46e34a775a4bb3133"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-fit-behavior@^3.0.0-pre.26":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-fit-behavior/-/iron-fit-behavior-3.0.1.tgz#e5c26b0b4d9e74f0c3d6d56b9cfd460e84bddf0d"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-flex-layout@^3.0.0-pre.26":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-flex-layout/-/iron-flex-layout-3.0.1.tgz#36f9e1a8eb792d279b2bc75d362628721ad37f0c"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-form@^3.0.0-pre.25":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-form/-/iron-form-3.0.1.tgz#f34a0d3663b9f357fb1d3eac882415a7f0fd4831"
-  dependencies:
-    "@polymer/iron-ajax" "^3.0.0-pre.26"
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-icon@^3.0.0-pre.18", "@polymer/iron-icon@^3.0.0-pre.25":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-icon/-/iron-icon-3.0.1.tgz#93211c39d8825fe4965a68419566036c1df291eb"
-  dependencies:
-    "@polymer/iron-flex-layout" "^3.0.0-pre.26"
-    "@polymer/iron-meta" "^3.0.0-pre.26"
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-iconset-svg@^3.0.0-pre.18":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-iconset-svg/-/iron-iconset-svg-3.0.1.tgz#568d6e7dbc120299dae63be3600aeba0d30ddbea"
-  dependencies:
-    "@polymer/iron-meta" "^3.0.0-pre.26"
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-list@^3.0.0-pre.18":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-list/-/iron-list-3.0.1.tgz#d6d7303742bda8a5cfb6a8a617c9598e27bdec9f"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior" "^3.0.0-pre.26"
-    "@polymer/iron-resizable-behavior" "^3.0.0-pre.26"
-    "@polymer/iron-scroll-target-behavior" "^3.0.0-pre.26"
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-media-query@^3.0.0-pre.18", "@polymer/iron-media-query@^3.0.0-pre.26":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-media-query/-/iron-media-query-3.0.1.tgz#5cd8a1c1e8c9b8bafd3dd5da14e0f8d2cfa76d83"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-meta@^3.0.0-pre.26":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-meta/-/iron-meta-3.0.1.tgz#7f140628d127b0a284f882f1bb323a261bc125f5"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-overlay-behavior@^3.0.0-pre.18":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-overlay-behavior/-/iron-overlay-behavior-3.0.2.tgz#6a12a3f4eab4721eb6978ed950be534c9c283983"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior" "^3.0.0-pre.26"
-    "@polymer/iron-fit-behavior" "^3.0.0-pre.26"
-    "@polymer/iron-resizable-behavior" "^3.0.0-pre.26"
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-resizable-behavior@^3.0.0-pre.18", "@polymer/iron-resizable-behavior@^3.0.0-pre.26":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-resizable-behavior/-/iron-resizable-behavior-3.0.1.tgz#e284348ed7c1c7e263f7039297532fa954025ea2"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-scroll-target-behavior@^3.0.0-pre.18", "@polymer/iron-scroll-target-behavior@^3.0.0-pre.26":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-scroll-target-behavior/-/iron-scroll-target-behavior-3.0.1.tgz#29fa644b320fb29ab6c68eb6d08a6520157764ac"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/iron-test-helpers@^3.0.0-pre.18":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@polymer/iron-test-helpers/-/iron-test-helpers-3.0.1.tgz#ec2b9c6567e2967a191b3d800a04b1167b2d1394"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@polymer/polymer@^3.0.0", "@polymer/polymer@^3.0.5":
+"@polymer/polymer@^3.0.5":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.5.tgz#eaa42e70df7de818b5e1839452c82a5f83e39929"
   dependencies:
@@ -576,319 +466,6 @@
 "@types/tapable@1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.2.tgz#e13182e1b69871a422d7863e11a4a6f5b814a4bd"
-
-"@vaadin/router@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/router/-/router-1.1.0.tgz#5a010ca510f5941a32fc34c93413184cb7a98ff5"
-  dependencies:
-    "@vaadin/vaadin-usage-statistics" "^2.0.1"
-    path-to-regexp "2.2.1"
-
-"@vaadin/vaadin-button@^2.1.0", "@vaadin/vaadin-button@^2.1.0-beta2":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-button/-/vaadin-button-2.1.0.tgz#b80b30066ccef6950737dc658857475dfd5f0622"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-control-state-mixin" "^2.1.1"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0-beta1"
-    "@vaadin/vaadin-material-styles" "^1.1.0-beta1"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-checkbox@^2.2.1":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-checkbox/-/vaadin-checkbox-2.2.2.tgz#81cf052c1ba886ad01915cff66b8932331e28dfa"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-control-state-mixin" "^2.1.1"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.2.0"
-    "@vaadin/vaadin-material-styles" "^1.2.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-combo-box@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-combo-box/-/vaadin-combo-box-4.1.0.tgz#80e8c7262099a9915690a63f491faaa74f8610e3"
-  dependencies:
-    "@polymer/iron-a11y-announcer" "^3.0.0-pre.18"
-    "@polymer/iron-a11y-keys-behavior" "^3.0.0-pre.18"
-    "@polymer/iron-list" "^3.0.0-pre.18"
-    "@polymer/iron-resizable-behavior" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-control-state-mixin" "^2.1.1"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-item" "^2.1.0-beta2"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0-beta1"
-    "@vaadin/vaadin-material-styles" "^1.1.0-beta1"
-    "@vaadin/vaadin-overlay" "^3.1.0-beta2"
-    "@vaadin/vaadin-text-field" "^2.1.0-beta2"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-context-menu@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-context-menu/-/vaadin-context-menu-4.1.0.tgz#1f6253f21ec4e9ecf8d18018297d138e11dc9930"
-  dependencies:
-    "@polymer/iron-media-query" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-element-mixin" "^2.1.1"
-    "@vaadin/vaadin-lumo-styles" "^1.1.1"
-    "@vaadin/vaadin-material-styles" "^1.1.1"
-    "@vaadin/vaadin-overlay" "^3.1.1"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-control-state-mixin@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-control-state-mixin/-/vaadin-control-state-mixin-2.1.1.tgz#39dab3105de15044408bd388ce7a8b20e608b509"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@vaadin/vaadin-date-picker@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-date-picker/-/vaadin-date-picker-3.2.0.tgz#52bad49e7091cadedfebec30b05df0e72f2b5158"
-  dependencies:
-    "@polymer/iron-a11y-announcer" "^3.0.0-pre.18"
-    "@polymer/iron-a11y-keys-behavior" "^3.0.0-pre.18"
-    "@polymer/iron-media-query" "^3.0.0-pre.18"
-    "@polymer/iron-resizable-behavior" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-button" "^2.1.0-beta2"
-    "@vaadin/vaadin-control-state-mixin" "^2.1.1"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0-beta1"
-    "@vaadin/vaadin-material-styles" "^1.1.0-beta1"
-    "@vaadin/vaadin-overlay" "^3.1.0-beta2"
-    "@vaadin/vaadin-text-field" "^2.1.0-beta2"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-development-mode-detector@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-development-mode-detector/-/vaadin-development-mode-detector-2.0.0.tgz#69417cbf4a9f7427ec7b70b7dc8e0605a2f900b3"
-
-"@vaadin/vaadin-dialog@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-dialog/-/vaadin-dialog-2.1.0.tgz#fd71e6a5a45879f536ec9c85d2e9cc74a769be02"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-overlay" "^3.1.1"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-dropdown-menu@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-dropdown-menu/-/vaadin-dropdown-menu-1.1.0.tgz#12bf60b79034d2996e233b5c13a93a825bf1a05e"
-  dependencies:
-    "@polymer/iron-media-query" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-control-state-mixin" "^2.1.1"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-overlay" "^3.1.1"
-    "@vaadin/vaadin-text-field" "^2.1.1"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-element-mixin@^2.0.0", "@vaadin/vaadin-element-mixin@^2.1.1":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-element-mixin/-/vaadin-element-mixin-2.1.2.tgz#f34421cc81e6aa3fdf688f0ba26f4a6ae030ad5e"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-development-mode-detector" "^2.0.0"
-    "@vaadin/vaadin-usage-statistics" "^2.0.1"
-
-"@vaadin/vaadin-form-layout@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-form-layout/-/vaadin-form-layout-2.1.0.tgz#8dfe90c06307b2ee2a3760ee6344bdc320fd1209"
-  dependencies:
-    "@polymer/iron-resizable-behavior" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-grid@^5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-grid/-/vaadin-grid-5.1.0.tgz#081ec449fcaaeb7f6af613d81e5a2a9a63089cbb"
-  dependencies:
-    "@polymer/iron-a11y-announcer" "^3.0.0-pre.18"
-    "@polymer/iron-a11y-keys-behavior" "^3.0.0-pre.18"
-    "@polymer/iron-resizable-behavior" "^3.0.0-pre.18"
-    "@polymer/iron-scroll-target-behavior" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-checkbox" "^2.2.1"
-    "@vaadin/vaadin-element-mixin" "^2.1.1"
-    "@vaadin/vaadin-lumo-styles" "^1.1.1"
-    "@vaadin/vaadin-material-styles" "^1.1.1"
-    "@vaadin/vaadin-text-field" "^2.1.1"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-item@^2.1.0", "@vaadin/vaadin-item@^2.1.0-beta2":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-item/-/vaadin-item-2.1.0.tgz#f4a3c3656e34774745a78b21c2e8a7ec3e32e396"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-list-box@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-list-box/-/vaadin-list-box-1.1.0.tgz#0188e97ff23bd0fd25be1c24f5dded29225c95a5"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-item" "^2.1.0"
-    "@vaadin/vaadin-list-mixin" "^2.1.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-list-mixin@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-list-mixin/-/vaadin-list-mixin-2.1.0.tgz#fe5c8fb02f73c341f00d3c428e196ba89e072df0"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@vaadin/vaadin-lumo-styles@^1.1.0", "@vaadin/vaadin-lumo-styles@^1.1.0-beta1", "@vaadin/vaadin-lumo-styles@^1.1.1", "@vaadin/vaadin-lumo-styles@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-lumo-styles/-/vaadin-lumo-styles-1.2.0.tgz#a1b5993282015412115529dad1348b0ed7b780cb"
-  dependencies:
-    "@polymer/iron-icon" "^3.0.0-pre.18"
-    "@polymer/iron-iconset-svg" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-
-"@vaadin/vaadin-material-styles@^1.1.0", "@vaadin/vaadin-material-styles@^1.1.0-beta1", "@vaadin/vaadin-material-styles@^1.1.1", "@vaadin/vaadin-material-styles@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-material-styles/-/vaadin-material-styles-1.2.0.tgz#8ac6056b30617a789ff806017ec14e779a1e0252"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@vaadin/vaadin-notification@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-notification/-/vaadin-notification-1.1.0.tgz#2def458d6f4c7c7a2bee98d04b84c5400153b1c3"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-ordered-layout@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-ordered-layout/-/vaadin-ordered-layout-1.1.0.tgz#3602f46d3ac563669c26f9ebe1f3099feebc919d"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-overlay@^3.1.0-beta2", "@vaadin/vaadin-overlay@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-overlay/-/vaadin-overlay-3.1.1.tgz#c20b9d7300405e9355faca20a102fec75ca5c3c9"
-  dependencies:
-    "@polymer/iron-overlay-behavior" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0-beta1"
-    "@vaadin/vaadin-material-styles" "^1.1.0-beta1"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-progress-bar@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-progress-bar/-/vaadin-progress-bar-1.1.0.tgz#f3ad9453174b824f2b51c140b8eb26d087714219"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-radio-button@^1.1.0":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-radio-button/-/vaadin-radio-button-1.1.2.tgz#b6398e37b0096f45dbd307960c6d1e79c827c2ac"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-control-state-mixin" "^2.1.1"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.2.0"
-    "@vaadin/vaadin-material-styles" "^1.2.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-split-layout@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-split-layout/-/vaadin-split-layout-4.1.0.tgz#6edcb65e62b55427822412d9a667db4af5a277f8"
-  dependencies:
-    "@polymer/iron-resizable-behavior" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-tabs@^2.1.0":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-tabs/-/vaadin-tabs-2.1.1.tgz#7bba8bb44e3fab71dfa96cc3c282a958003cbdb8"
-  dependencies:
-    "@polymer/iron-resizable-behavior" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-item" "^2.1.0"
-    "@vaadin/vaadin-list-mixin" "^2.1.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-text-field@^2.1.0-beta2", "@vaadin/vaadin-text-field@^2.1.1":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-text-field/-/vaadin-text-field-2.1.2.tgz#b19bee3bd7e2f0bdad93802f4a11dc24d7ff3815"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-control-state-mixin" "^2.1.1"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0-beta1"
-    "@vaadin/vaadin-material-styles" "^1.1.0-beta1"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-themable-mixin@^1.2.1":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-themable-mixin/-/vaadin-themable-mixin-1.3.2.tgz#1c5f3fa56bd5c41a9b5ce0de8ad9506380c72f39"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-
-"@vaadin/vaadin-time-picker@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-time-picker/-/vaadin-time-picker-1.0.0.tgz#19cf72bbed02f78af9c0846008744da7416c0811"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior" "^3.0.0-pre.18"
-    "@polymer/iron-test-helpers" "^3.0.0-pre.18"
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-combo-box" "^4.1.0"
-    "@vaadin/vaadin-control-state-mixin" "^2.1.1"
-    "@vaadin/vaadin-element-mixin" "^2.1.1"
-    "@vaadin/vaadin-lumo-styles" "^1.1.1"
-    "@vaadin/vaadin-material-styles" "^1.1.1"
-    "@vaadin/vaadin-text-field" "^2.1.1"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-upload@^4.2.0":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-upload/-/vaadin-upload-4.2.1.tgz#2ca0f46cd3b536a55247b207d3bf307b5f6f7f85"
-  dependencies:
-    "@polymer/polymer" "^3.0.0"
-    "@vaadin/vaadin-button" "^2.1.0"
-    "@vaadin/vaadin-element-mixin" "^2.0.0"
-    "@vaadin/vaadin-lumo-styles" "^1.1.0"
-    "@vaadin/vaadin-material-styles" "^1.1.0"
-    "@vaadin/vaadin-progress-bar" "^1.1.0"
-    "@vaadin/vaadin-themable-mixin" "^1.2.1"
-
-"@vaadin/vaadin-usage-statistics@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-usage-statistics/-/vaadin-usage-statistics-2.0.1.tgz#277e880c901521f8b763ed0f16ca6900ac6a9f43"
-  dependencies:
-    "@vaadin/vaadin-development-mode-detector" "^2.0.0"
 
 "@webassemblyjs/ast@1.7.6":
   version "1.7.6"
@@ -1023,7 +600,7 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.5.2.tgz#ad72f43000c39ba4ac61e625131f34f4b7cfe55f"
 
-"@webcomponents/webcomponentsjs@^2.1.1":
+"@webcomponents/webcomponentsjs@^2.1.3":
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.1.3.tgz#f7430c6efe52ab06f69d219fddd32afd2758f683"
 
@@ -2605,7 +2182,7 @@ configstore@^3.0.0:
     write-file-atomic "^2.0.0"
     xdg-basedir "^3.0.0"
 
-connect-history-api-fallback@^1.3.0, connect-history-api-fallback@^1.5.0:
+connect-history-api-fallback@^1.3.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/connect-history-api-fallback/-/connect-history-api-fallback-1.5.0.tgz#b06873934bc5e344fef611a196a6faae0aee015a"
 
@@ -3721,12 +3298,6 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   resolved "https://registry.yarnpkg.com/expand-tilde/-/expand-tilde-2.0.2.tgz#97e801aa052df02454de46b02bf621642cdc8502"
   dependencies:
     homedir-polyfill "^1.0.1"
-
-express-static-gzip@^1.1.1:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/express-static-gzip/-/express-static-gzip-1.1.3.tgz#345ea02637d9d5865777d6fb57ccc0884abcda65"
-  dependencies:
-    serve-static "^1.12.3"
 
 express@^4.16.2, express@^4.16.3:
   version "4.16.3"
@@ -6898,10 +6469,6 @@ path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
 
-path-to-regexp@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-2.2.1.tgz#90b617025a16381a879bc82a38d4e8bdeb2bcf45"
-
 path-type@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-1.1.0.tgz#59c44f7ee491da704da415da5a4070ba4f8fe441"
@@ -8144,7 +7711,7 @@ serve-index@^1.7.2:
     mime-types "~2.1.17"
     parseurl "~1.3.2"
 
-serve-static@1.13.2, serve-static@^1.12.3:
+serve-static@1.13.2:
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.13.2.tgz#095e8472fd5b46237db50ce486a43f4b86c6cec1"
   dependencies:
