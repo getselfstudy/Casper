@@ -30,6 +30,7 @@ class Answer extends PolymerElement {
                     display: flex;
                     width: 29%;
                     flex-basis: 300px;
+                    flex-grow: 10;
                 }
                 .answer-caption {
                     display: inline-block;

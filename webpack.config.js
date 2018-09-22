@@ -128,15 +128,13 @@ const developmentConfig = merge([
             })
         ],
         devServer: {
-            contentBase: OUTPUT_PATH,
+            contentBase: '.',
+            publicPath: '/assets/components',
             compress: true,
             overlay: true,
             port: 3000,
             host: "0.0.0.0",
-            historyApiFallback: true,
-            proxy: {
-                "/api": "http://localhost:8000"
-            }
+            historyApiFallback: true
         }
     }
 ]);
