@@ -149,6 +149,10 @@ class Question extends PolymerElement {
 
     static get properties() {
         return {
+            answers: {
+                type: Array,
+                notify: true
+            },
             id: {
                 type: String,
                 value: "default"
@@ -247,16 +251,8 @@ class Question extends PolymerElement {
             answers.sort(function(a, b) {
                 return a.getAttribute("order") - b.getAttribute("order");
             });
-
-            let previous = null;
-            for (const index in answers) {
-                const answer = answers[index];
-                if (previous) {
-                    answer.parentNode.insertBefore(previous, answer);
-                }
-                previous = answer;
-            }
         }
+        this.set('answers', answers);
     }
 
     connectedCallback() {
