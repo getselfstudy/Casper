@@ -8,12 +8,12 @@ self.__precacheManifest = [
     "url": "/assets/components/vendor/bundles/webcomponents-sd.js.map"
   },
   {
-    "revision": "2a4e4544e063858d45ff6def0564a7a2",
-    "url": "/assets/components/vendor/regenerator-runtime.min.js"
-  },
-  {
     "revision": "0e7a6edc16d1135f68498f5d34f09ca1",
     "url": "/assets/components/vendor/webcomponents-bundle.js.map"
+  },
+  {
+    "revision": "2a4e4544e063858d45ff6def0564a7a2",
+    "url": "/assets/components/vendor/regenerator-runtime.min.js"
   },
   {
     "revision": "8391957aaff84ed2243736878b5b1108",
