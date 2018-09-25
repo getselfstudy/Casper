@@ -8,17 +8,17 @@ This program is available under Apache License Version 2.0, available at https:/
 <html lang="en">
   <head>
     <script>if (!window.customElements) { document.write('<!--'); }</script>
-    <script src="./vendor/custom-elements-es5-adapter.js"></script>
+    <script src="/assets/components/vendor/custom-elements-es5-adapter.js"></script>
     <!--! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
 
-    <!-- <script>
+    <script>
       // Load and register pre-caching Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('sw.js');
+          navigator.serviceWorker.register('/assets/components/sw.js');
         });
       }
-    </script> -->
+    </script>
   </head>
   <body>
     <div>
@@ -78,9 +78,9 @@ This program is available under Apache License Version 2.0, available at https:/
     </div>
     
     <!-- Load the external helpers to run the code transpiled to ES5 -->
-    <script src="./vendor/babel-helpers.min.js"></script>
-    <script src="./vendor/regenerator-runtime.min.js"></script>
+    <script src="/assets/components/vendor/babel-helpers.min.js"></script>
+    <script src="/assets/components/vendor/regenerator-runtime.min.js"></script>
     <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
-    <script src="./vendor/webcomponents-loader.js"></script>
+    <script src="/assets/components/vendor/webcomponents-loader.js"></script>
   </body>
 </html>

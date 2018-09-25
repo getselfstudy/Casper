@@ -204,7 +204,12 @@ class Question extends PolymerElement {
                 type: Boolean,
                 value: false,
                 notify: true
+            },
+            sequenced: {
+                type: Boolean,
+                value: false
             }
+
         };
     }
 
@@ -220,12 +225,14 @@ class Question extends PolymerElement {
             this.querySelectorAll("selfstudy-answer")
         );
         const preserve = truthy(this.getAttribute("preserve"));
+        this.sequenced = false;
         this.expected = (this.getAttribute("expect") || "1")
             .split(",")
             .reduce((expect, val) => {
                 const [index, order] = val.split(":");
                 if (order) {
                     expect[index] = Number(order);
+                    this.sequenced = true;
                 } else {
                     expect[index] = true;
                 }
@@ -365,12 +372,24 @@ class Question extends PolymerElement {
         }, true);
         answer.correct = correct;
 
+        if (this.sequenced) {
+            this.answers.forEach(answer => {
+                let index = choice[answer.id];
+                if (index == null || typeof index !== 'number') {
+                index = null;
+                }
+                if (answer.index !== index) {
+                    answer.index = index;
+                }
+            });
+        }
+
         this.set("correct", correct);
         this.set(
             "answered",
             Object.keys(choice)
                 .map(key => {
-                    return `${key}:${choice[key]}`;
+                    return this.sequenced ? `${key}:${choice[key]}` : `${key}`;
                 })
                 .join(", ") + (correct ? " correct!" : "")
         );

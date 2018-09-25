@@ -13,11 +13,24 @@ workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest);
 
 // See https://developers.google.com/web/tools/workbox/modules/workbox-routing
-workbox.routing.registerNavigationRoute("/index.html");
+workbox.routing.registerNavigationRoute('/index.html');
 workbox.routing.registerRoute(
-    new RegExp("/vendor/(?!.*loader).*.js$"),
+    new RegExp('/assets/built/vendor/(?!.*loader).*.js$'),
     workbox.strategies.staleWhileRevalidate(),
-    "GET"
+    'GET'
+);
+workbox.routing.registerRoute(
+    new RegExp('/'),
+    ({url, event, params}) => {
+        return fetch(event.request)
+            .then((response) => {
+                return response.text();
+            })
+            .then((responseBody) => {
+                return new Response(`${responseBody} <!-- Look Ma. Added Content. -->`);
+            });
+    },
+    'POST'
 );
 
 // Uncomment next line to enable offline Google Analytics

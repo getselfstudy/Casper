@@ -145,34 +145,42 @@ class Answer extends PolymerElement {
                 }
                 .question-answer input[type="radio"],
                 .question-answer input[type="checkbox"] {
+                    -webkit-appearance: none;
+                    appearance: none;
+                }
+                .question-answer input[type="radio"] + span,
+                .question-answer input[type="checkbox"] + span {
                     margin: 20px 10px;
                     position: relative;
                     display: inline-block;
                     vertical-align: middle;
                 }
-                .question-answer input[type="radio"],
-                .question-answer input[type="checkbox"] {
+                .question-answer input[type="radio"] + span,
+                .question-answer input[type="checkbox"] + span {
                     background: #f3f3f3;
                     width: 30px;
                     height: 30px;
                     border: 2px solid #366fb5;
                     transition: all 0.3s linear;
+                    line-height:30px;
+                    margin: 0 4px 0 0;
+                    text-align: center;
+                    vertical-align:middle;
                     cursor: pointer;
-                    -webkit-appearance: none;
-                    appearance: none;
                 }
-                .question-answer input[type="radio"] {
+                .question-answer input[type="radio"] + span {
                     border-radius: 50%;
                 }
-                .question-answer input[type="checkbox"] {
+                .question-answer input[type="checkbox"] + span {
                     border-radius: 2px;
                 }
-                .question-answer input[type="radio"]:checked,
-                .question-answer input[type="checkbox"]:checked {
+                .question-answer input[type="radio"]:checked + span,
+                .question-answer input[type="checkbox"]:checked + span {
                     background-color: #366fb5;
+                    color: white;
                 }
-                .question-answer input[type="radio"]:focus,
-                .question-answer input[type="checkbox"]:focus {
+                .question-answer input[type="radio"]:focus + span,
+                .question-answer input[type="checkbox"]:focus + span {
                     outline: 0 none;
                     box-shadow: none;
                 }
@@ -208,6 +216,7 @@ class Answer extends PolymerElement {
                             value="[[config.value]]"
                             on-change="handleChange"
                         />
+                        <span>[[index]]</span>
                         <div class="answer-caption">
                             <div class="question-para">
                                 <slot></slot>
@@ -236,6 +245,10 @@ class Answer extends PolymerElement {
                 },
                 notify: true,
                 readOnly: false
+            },
+            index: {
+                type: Number,
+                value: null
             },
             value: {
                 type: String,
@@ -287,7 +300,8 @@ class Answer extends PolymerElement {
                 value,
                 path: this.config.path,
                 id: this.id
-            }
+            },
+            target: this
         });
         this.dispatchEvent(event);
     }
