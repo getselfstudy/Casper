@@ -12,12 +12,12 @@ self.__precacheManifest = [
     "url": "/assets/components/vendor/webcomponents-bundle.js.map"
   },
   {
-    "revision": "2a4e4544e063858d45ff6def0564a7a2",
-    "url": "/assets/components/vendor/regenerator-runtime.min.js"
-  },
-  {
     "revision": "8391957aaff84ed2243736878b5b1108",
     "url": "/assets/components/vendor/custom-elements-es5-adapter.js"
+  },
+  {
+    "revision": "2a4e4544e063858d45ff6def0564a7a2",
+    "url": "/assets/components/vendor/regenerator-runtime.min.js"
   },
   {
     "revision": "739b07ab53a0d098ace3baba32392631",
