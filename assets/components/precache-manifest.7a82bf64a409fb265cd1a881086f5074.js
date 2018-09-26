@@ -4,24 +4,24 @@ self.__precacheManifest = [
     "url": "/assets/components/vendor/webcomponents-loader.js"
   },
   {
-    "revision": "60a5373be78f3ed1d685b794516df626",
-    "url": "/assets/components/vendor/bundles/webcomponents-sd.js.map"
+    "revision": "739b07ab53a0d098ace3baba32392631",
+    "url": "/assets/components/vendor/bundles/webcomponents-sd-ce.js.map"
   },
   {
-    "revision": "0e7a6edc16d1135f68498f5d34f09ca1",
-    "url": "/assets/components/vendor/webcomponents-bundle.js.map"
+    "revision": "60a5373be78f3ed1d685b794516df626",
+    "url": "/assets/components/vendor/bundles/webcomponents-sd.js.map"
   },
   {
     "revision": "8391957aaff84ed2243736878b5b1108",
     "url": "/assets/components/vendor/custom-elements-es5-adapter.js"
   },
   {
-    "revision": "2a4e4544e063858d45ff6def0564a7a2",
-    "url": "/assets/components/vendor/regenerator-runtime.min.js"
+    "revision": "0e7a6edc16d1135f68498f5d34f09ca1",
+    "url": "/assets/components/vendor/webcomponents-bundle.js.map"
   },
   {
-    "revision": "739b07ab53a0d098ace3baba32392631",
-    "url": "/assets/components/vendor/bundles/webcomponents-sd-ce.js.map"
+    "revision": "2a4e4544e063858d45ff6def0564a7a2",
+    "url": "/assets/components/vendor/regenerator-runtime.min.js"
   },
   {
     "revision": "12a3be26a3d9cbfb6ed798b0c9f2bad8",
