@@ -114,7 +114,6 @@ const commonConfig = merge([
             ]
         },
         plugins: [
-            new CleanWebpackPlugin([OUTPUT_PATH], {verbose: true}),
             new CopyWebpackPlugin([...polyfills, ...helpers, ...assets]),
             new InjectManifest({
                 swSrc: resolve('src', 'service-worker.js'),
@@ -129,7 +128,6 @@ const developmentConfig = merge([
     {
         devtool: 'cheap-module-source-map',
         plugins: [
-            new CopyWebpackPlugin([...polyfills, ...helpers, ...assets]),
             new HtmlWebpackPlugin({
                 template: INDEX_TEMPLATE
             })
@@ -168,7 +166,9 @@ const productionConfig = merge([
 
 module.exports = (mode) => {
     if (mode === 'production') {
-        return merge(commonConfig, productionConfig, { mode });
+        const config = merge(commonConfig, productionConfig, { mode });
+        config.plugins.splice(0, 0, new CleanWebpackPlugin([OUTPUT_PATH], {verbose: true}));
+        return config;
     }
 
     return merge(commonConfig, developmentConfig, { mode });
